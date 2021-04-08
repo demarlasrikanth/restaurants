@@ -1,0 +1,8 @@
+{
+  "restaurants": [
+    { "id": 1, "name": "KFC restaurant", "address": "hyderabad", "email": "kfc@test.com"},
+    { "id": 2, "name": "on restaurant", "address": "hyderabad", "email": "on@test.com" }
+
+  ]
+
+}
