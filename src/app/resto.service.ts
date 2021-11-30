@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
-import {Observable, throwError} from 'rxjs';
-import {catchError} from 'rxjs/operators';
+
 
 
 @Injectable({
@@ -13,12 +12,21 @@ export class RestoService {
   constructor(private http: HttpClient) {
   }
 
-  // tslint:disable-next-line:typedef
-  errorHandler(error: HttpErrorResponse) {
-    return throwError(error.message || 'server error.');
+  getList() {
+    return this.http.get(this.url);
   }
 
-  getList(): Observable<any> {
-    return this.http.get<any>(this.url).pipe(catchError(this.errorHandler));
+  saveResto(data) {
+    return this.http.post(this.url, data);
+  }
+
+  deleteResto(id) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+  getCurrentResto(id){
+    return this.http.get(`${this.url}/${id}`);
+  }
+  updateResto(id,data){
+    return this.http.put(`${this.url}/${id}`, data);
   }
 }

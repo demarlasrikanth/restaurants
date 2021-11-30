@@ -11,6 +11,12 @@
       "name": "ds restaurant",
       "address": "hyderabad",
       "email": "ds@test.com"
+    },
+    {
+      "name": "hlo",
+      "email": "sat",
+      "address": "dfg",
+      "id": 3
     }
   ]
 }
